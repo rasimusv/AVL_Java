@@ -1,10 +1,12 @@
+import java.util.Arrays;
+
 /*
 AVL_Tree implementation
 
 @author RASIM GARIPOV
 @author LYSENKOV DMITRIY
 april 2020
-ITIS Higher School, KFU, Kazan, Russia
+Higher School of ITIS, Kazan Federal University, Kazan, Russia
  */
 public class AVL_Tree<T extends Comparable<T>> {
 
@@ -42,4 +44,18 @@ public class AVL_Tree<T extends Comparable<T>> {
     public void traverse() {
         root.traverse(root);
     }
+
+    public String toString() {
+        return Arrays.deepToString(this.toArray());
+    }
+
+    public int size() {
+        return root.treeSize(root);
+    }
+
+    private T[] toArray() {
+        return root.treeToArray(root);
+
+    }
+
 }
